@@ -21,19 +21,10 @@ let package = Package(
         .package(url: "https://github.com/swiftlang/swift-docc-plugin", from: "1.4.3")
     ],
     targets: [
-        .target(
-            name: "Music",
-            dependencies: [],
-            swiftSettings: [
-                .enableUpcomingFeature("StrictConcurrency")
-            ]
-        ),
+        .target(name: "Music"),
         .testTarget(
             name: "MusicTests",
-            dependencies: ["Music"],
-            swiftSettings: [
-                .enableUpcomingFeature("StrictConcurrency")
-            ]
+            dependencies: ["Music"]
         )
     ]
 )
