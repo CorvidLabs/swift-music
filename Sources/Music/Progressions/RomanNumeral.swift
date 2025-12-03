@@ -1,7 +1,9 @@
-/// Represents a Roman numeral chord notation
-///
-/// Roman numeral analysis is used to describe chords in relation
-/// to a key, independent of the specific root note.
+/**
+ Represents a Roman numeral chord notation
+
+ Roman numeral analysis is used to describe chords in relation
+ to a key, independent of the specific root note.
+ */
 public struct RomanNumeral: Sendable {
     /// The scale degree (1-7)
     public let degree: Int
@@ -9,10 +11,13 @@ public struct RomanNumeral: Sendable {
     /// The quality of the chord
     public let quality: ChordQuality
 
-    /// Creates a Roman numeral
-    /// - Parameters:
-    ///   - degree: The scale degree (1-7)
-    ///   - quality: The chord quality
+    /**
+     Creates a Roman numeral
+
+     - Parameters:
+       - degree: The scale degree (1-7)
+       - quality: The chord quality
+     */
     public init(degree: Int, quality: ChordQuality) {
         self.degree = degree
         self.quality = quality
@@ -79,9 +84,12 @@ public struct RomanNumeral: Sendable {
         return adjustedNumeral + suffix
     }
 
-    /// Creates a chord from this Roman numeral in a specific key
-    /// - Parameter scale: The scale defining the key
-    /// - Returns: The chord
+    /**
+     Creates a chord from this Roman numeral in a specific key
+
+     - Parameter scale: The scale defining the key
+     - Returns: The chord
+     */
     public func chord(in scale: Scale) -> Chord {
         let rootPitchClass = scale.root.transposed(by: scale.pattern.intervals[degree - 1])
         return Chord(root: rootPitchClass, quality: quality)

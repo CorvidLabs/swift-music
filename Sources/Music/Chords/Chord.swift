@@ -1,7 +1,9 @@
-/// Represents a musical chord
-///
-/// A chord combines a root note, quality, optional extensions,
-/// and optional bass note to define a harmonic structure.
+/**
+ Represents a musical chord
+
+ A chord combines a root note, quality, optional extensions,
+ and optional bass note to define a harmonic structure.
+ */
 public struct Chord: Sendable {
     /// The root pitch class of the chord
     public let root: PitchClass
@@ -15,12 +17,15 @@ public struct Chord: Sendable {
     /// Optional bass note (for slash chords)
     public let bass: PitchClass?
 
-    /// Creates a chord
-    /// - Parameters:
-    ///   - root: The root pitch class
-    ///   - quality: The chord quality
-    ///   - extensions: Optional extensions (default: none)
-    ///   - bass: Optional bass note for slash chords (default: nil)
+    /**
+     Creates a chord
+
+     - Parameters:
+       - root: The root pitch class
+       - quality: The chord quality
+       - extensions: Optional extensions (default: none)
+       - bass: Optional bass note for slash chords (default: nil)
+     */
     public init(
         root: PitchClass,
         quality: ChordQuality,
@@ -57,9 +62,12 @@ public struct Chord: Sendable {
         }
     }
 
-    /// Generates notes for this chord in a specific octave
-    /// - Parameter octave: The octave for the root note
-    /// - Returns: Array of notes in the chord
+    /**
+     Generates notes for this chord in a specific octave
+
+     - Parameter octave: The octave for the root note
+     - Returns: Array of notes in the chord
+     */
     public func notes(octave: Int) -> [Note] {
         let baseIntervals = quality.intervals + extensions.intervals
 
@@ -79,9 +87,12 @@ public struct Chord: Sendable {
         return notes
     }
 
-    /// Returns an inversion of this chord
-    /// - Parameter inversion: The inversion number (0 = root position, 1 = first inversion, etc.)
-    /// - Returns: The inverted chord
+    /**
+     Returns an inversion of this chord
+
+     - Parameter inversion: The inversion number (0 = root position, 1 = first inversion, etc.)
+     - Returns: The inverted chord
+     */
     public func inversion(_ inversion: Int) -> Chord {
         let noteCount = quality.intervals.count
         guard inversion > 0 && inversion < noteCount else {

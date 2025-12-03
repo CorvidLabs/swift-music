@@ -1,6 +1,8 @@
-/// Represents the quality of a chord
-///
-/// Chord quality defines the intervals that make up a chord's basic structure.
+/**
+ Represents the quality of a chord
+
+ Chord quality defines the intervals that make up a chord's basic structure.
+ */
 public enum ChordQuality: Sendable {
     /// Major triad: root, major 3rd, perfect 5th
     case major

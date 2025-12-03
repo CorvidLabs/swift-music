@@ -1,7 +1,9 @@
-/// Represents the quality of a musical interval
-///
-/// Interval quality describes the character of an interval
-/// beyond its numeric distance (e.g., major 3rd vs minor 3rd).
+/**
+ Represents the quality of a musical interval
+
+ Interval quality describes the character of an interval
+ beyond its numeric distance (e.g., major 3rd vs minor 3rd).
+ */
 public enum IntervalQuality: Sendable {
     /// Perfect intervals (unison, 4th, 5th, octave)
     case perfect

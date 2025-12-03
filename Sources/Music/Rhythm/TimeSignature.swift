@@ -1,7 +1,9 @@
-/// Represents a time signature
-///
-/// A time signature defines the rhythmic meter of music, indicating
-/// how many beats are in each measure and what note value gets the beat.
+/**
+ Represents a time signature
+
+ A time signature defines the rhythmic meter of music, indicating
+ how many beats are in each measure and what note value gets the beat.
+ */
 public struct TimeSignature: Sendable {
     /// Number of beats per measure
     public let beats: Int
@@ -9,10 +11,13 @@ public struct TimeSignature: Sendable {
     /// Note value that gets one beat (typically 2, 4, 8, or 16)
     public let noteValue: Int
 
-    /// Creates a time signature
-    /// - Parameters:
-    ///   - beats: Number of beats per measure
-    ///   - noteValue: Note value that gets one beat
+    /**
+     Creates a time signature
+
+     - Parameters:
+       - beats: Number of beats per measure
+       - noteValue: Note value that gets one beat
+     */
     public init(beats: Int, noteValue: Int) {
         self.beats = beats
         self.noteValue = noteValue

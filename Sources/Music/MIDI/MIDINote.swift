@@ -1,13 +1,18 @@
-/// Represents a MIDI note number (0-127)
-///
-/// MIDI notes range from 0 (C-1) to 127 (G9).
+/**
+ Represents a MIDI note number (0-127)
+
+ MIDI notes range from 0 (C-1) to 127 (G9).
+ */
 public struct MIDINote: Sendable {
     /// The MIDI note number (0-127)
     public let value: UInt8
 
-    /// Creates a MIDI note
-    /// - Parameter value: The MIDI note number (0-127)
-    /// - Throws: MusicError.invalidMIDI if the value is out of range
+    /**
+     Creates a MIDI note
+
+     - Parameter value: The MIDI note number (0-127)
+     - Throws: MusicError.invalidMIDI if the value is out of range
+     */
     public init(_ value: UInt8) throws {
         guard value <= 127 else {
             throw MusicError.invalidMIDI("MIDI note must be 0-127, got \(value)")
@@ -15,14 +20,20 @@ public struct MIDINote: Sendable {
         self.value = value
     }
 
-    /// Creates a MIDI note from an integer (clamped to 0-127)
-    /// - Parameter value: The MIDI note number
+    /**
+     Creates a MIDI note from an integer (clamped to 0-127)
+
+     - Parameter value: The MIDI note number
+     */
     public init(clamped value: Int) {
         self.value = UInt8(max(0, min(127, value)))
     }
 
-    /// Creates a MIDI note, returning nil if out of range
-    /// - Parameter value: The MIDI note number
+    /**
+     Creates a MIDI note, returning nil if out of range
+
+     - Parameter value: The MIDI note number
+     */
     public init?(unchecked value: UInt8) {
         guard value <= 127 else {
             return nil

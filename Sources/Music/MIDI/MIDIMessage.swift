@@ -1,8 +1,10 @@
 import Foundation
 
-/// Represents a MIDI message
-///
-/// MIDI messages are the fundamental communication protocol for MIDI devices.
+/**
+ Represents a MIDI message
+
+ MIDI messages are the fundamental communication protocol for MIDI devices.
+ */
 public enum MIDIMessage: Sendable {
     /// Note on message
     case noteOn(channel: MIDIChannel, note: MIDINote, velocity: MIDIVelocity)
@@ -60,10 +62,13 @@ public enum MIDIMessage: Sendable {
         }
     }
 
-    /// Parses a MIDI message from bytes
-    /// - Parameter bytes: The MIDI bytes
-    /// - Returns: The parsed MIDI message
-    /// - Throws: MusicError.parsingError if the bytes are invalid
+    /**
+     Parses a MIDI message from bytes
+
+     - Parameter bytes: The MIDI bytes
+     - Returns: The parsed MIDI message
+     - Throws: MusicError.parsingError if the bytes are invalid
+     */
     public static func parse(_ bytes: [UInt8]) throws -> MIDIMessage {
         guard let firstByte = bytes.first else {
             throw MusicError.parsingError("Empty MIDI message")

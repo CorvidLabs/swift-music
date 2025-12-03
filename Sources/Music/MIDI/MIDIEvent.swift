@@ -1,6 +1,8 @@
-/// Represents a MIDI event with timing information
-///
-/// A MIDI event combines a MIDI message with a timestamp (tick).
+/**
+ Represents a MIDI event with timing information
+
+ A MIDI event combines a MIDI message with a timestamp (tick).
+ */
 public struct MIDIEvent: Sendable {
     /// The tick (timing) of this event
     public let tick: UInt32
@@ -8,22 +10,28 @@ public struct MIDIEvent: Sendable {
     /// The MIDI message
     public let message: MIDIMessage
 
-    /// Creates a MIDI event
-    /// - Parameters:
-    ///   - tick: The tick (timing) of the event
-    ///   - message: The MIDI message
+    /**
+     Creates a MIDI event
+
+     - Parameters:
+       - tick: The tick (timing) of the event
+       - message: The MIDI message
+     */
     public init(tick: UInt32, message: MIDIMessage) {
         self.tick = tick
         self.message = message
     }
 
-    /// Creates a note on event
-    /// - Parameters:
-    ///   - tick: The tick (timing) of the event
-    ///   - channel: The MIDI channel
-    ///   - note: The MIDI note
-    ///   - velocity: The velocity
-    /// - Returns: A MIDI event with a note on message
+    /**
+     Creates a note on event
+
+     - Parameters:
+       - tick: The tick (timing) of the event
+       - channel: The MIDI channel
+       - note: The MIDI note
+       - velocity: The velocity
+     - Returns: A MIDI event with a note on message
+     */
     public static func noteOn(
         tick: UInt32,
         channel: MIDIChannel,
@@ -36,13 +44,16 @@ public struct MIDIEvent: Sendable {
         )
     }
 
-    /// Creates a note off event
-    /// - Parameters:
-    ///   - tick: The tick (timing) of the event
-    ///   - channel: The MIDI channel
-    ///   - note: The MIDI note
-    ///   - velocity: The velocity
-    /// - Returns: A MIDI event with a note off message
+    /**
+     Creates a note off event
+
+     - Parameters:
+       - tick: The tick (timing) of the event
+       - channel: The MIDI channel
+       - note: The MIDI note
+       - velocity: The velocity
+     - Returns: A MIDI event with a note off message
+     */
     public static func noteOff(
         tick: UInt32,
         channel: MIDIChannel,

@@ -1,7 +1,9 @@
-/// Represents a musical scale with a specific root note and pattern
-///
-/// A scale combines a root pitch class with a scale pattern to define
-/// a specific collection of pitches.
+/**
+ Represents a musical scale with a specific root note and pattern
+
+ A scale combines a root pitch class with a scale pattern to define
+ a specific collection of pitches.
+ */
 public struct Scale: Sendable {
     /// The root pitch class of the scale
     public let root: PitchClass
@@ -9,10 +11,13 @@ public struct Scale: Sendable {
     /// The pattern of intervals that defines the scale
     public let pattern: ScalePattern
 
-    /// Creates a scale with a root and pattern
-    /// - Parameters:
-    ///   - root: The root pitch class
-    ///   - pattern: The scale pattern
+    /**
+     Creates a scale with a root and pattern
+
+     - Parameters:
+       - root: The root pitch class
+       - pattern: The scale pattern
+     */
     public init(root: PitchClass, pattern: ScalePattern) {
         self.root = root
         self.pattern = pattern
@@ -25,11 +30,14 @@ public struct Scale: Sendable {
         }
     }
 
-    /// Generates notes in this scale for a given octave range
-    /// - Parameters:
-    ///   - startOctave: The starting octave
-    ///   - endOctave: The ending octave (inclusive)
-    /// - Returns: Array of notes in the scale
+    /**
+     Generates notes in this scale for a given octave range
+
+     - Parameters:
+       - startOctave: The starting octave
+       - endOctave: The ending octave (inclusive)
+     - Returns: Array of notes in the scale
+     */
     public func notes(from startOctave: Int, to endOctave: Int) -> [Note] {
         var notes: [Note] = []
 
@@ -44,11 +52,14 @@ public struct Scale: Sendable {
         return notes.sorted()
     }
 
-    /// Generates notes in this scale starting from a specific note
-    /// - Parameters:
-    ///   - startNote: The starting note
-    ///   - count: The number of notes to generate
-    /// - Returns: Array of notes in the scale
+    /**
+     Generates notes in this scale starting from a specific note
+
+     - Parameters:
+       - startNote: The starting note
+       - count: The number of notes to generate
+     - Returns: Array of notes in the scale
+     */
     public func notes(from startNote: Note, count: Int) -> [Note] {
         var notes: [Note] = []
         var currentOctave = startNote.octave
@@ -72,17 +83,22 @@ public struct Scale: Sendable {
         return notes
     }
 
-    /// Checks if a pitch class is in this scale
-    /// - Parameter pitchClass: The pitch class to check
-    /// - Returns: True if the pitch class is in the scale
+    /**
+     Checks if a pitch class is in this scale
+
+     - Parameter pitchClass: The pitch class to check
+     - Returns: True if the pitch class is in the scale
+     */
     public func contains(_ pitchClass: PitchClass) -> Bool {
         pitchClasses.contains(pitchClass)
     }
 
-    /// Returns the relative major or minor scale
-    ///
-    /// For minor scales, returns the relative major.
-    /// For major scales, returns the relative minor.
+    /**
+     Returns the relative major or minor scale
+
+     For minor scales, returns the relative major.
+     For major scales, returns the relative minor.
+     */
     public var relative: Scale? {
         switch pattern {
         case .major:
@@ -96,9 +112,11 @@ public struct Scale: Sendable {
         }
     }
 
-    /// Returns the parallel major or minor scale
-    ///
-    /// A parallel scale shares the same root but has a different quality.
+    /**
+     Returns the parallel major or minor scale
+
+     A parallel scale shares the same root but has a different quality.
+     */
     public var parallel: Scale? {
         switch pattern {
         case .major:

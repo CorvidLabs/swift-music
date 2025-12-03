@@ -1,7 +1,9 @@
-/// Represents a chord progression in a specific key
-///
-/// A chord progression is a sequence of chords, typically described
-/// using Roman numeral analysis.
+/**
+ Represents a chord progression in a specific key
+
+ A chord progression is a sequence of chords, typically described
+ using Roman numeral analysis.
+ */
 public struct ChordProgression: Sendable {
     /// The scale (key) of the progression
     public let scale: Scale
@@ -9,10 +11,13 @@ public struct ChordProgression: Sendable {
     /// The Roman numerals defining the progression
     public let numerals: [RomanNumeral]
 
-    /// Creates a chord progression
-    /// - Parameters:
-    ///   - scale: The scale (key) of the progression
-    ///   - numerals: The Roman numerals defining the progression
+    /**
+     Creates a chord progression
+
+     - Parameters:
+       - scale: The scale (key) of the progression
+       - numerals: The Roman numerals defining the progression
+     */
     public init(scale: Scale, numerals: [RomanNumeral]) {
         self.scale = scale
         self.numerals = numerals
@@ -23,9 +28,12 @@ public struct ChordProgression: Sendable {
         numerals.map { $0.chord(in: scale) }
     }
 
-    /// Transposes this progression to a new key
-    /// - Parameter newRoot: The root of the new key
-    /// - Returns: The transposed progression
+    /**
+     Transposes this progression to a new key
+
+     - Parameter newRoot: The root of the new key
+     - Returns: The transposed progression
+     */
     public func transposed(to newRoot: PitchClass) -> ChordProgression {
         let newScale = Scale(root: newRoot, pattern: scale.pattern)
         return ChordProgression(scale: newScale, numerals: numerals)

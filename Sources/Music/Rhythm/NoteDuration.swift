@@ -1,6 +1,8 @@
-/// Represents the duration of a musical note
-///
-/// Note durations are expressed as fractions of a whole note.
+/**
+ Represents the duration of a musical note
+
+ Note durations are expressed as fractions of a whole note.
+ */
 public enum NoteDuration: Sendable {
     /// Whole note (4 beats in 4/4 time)
     case whole

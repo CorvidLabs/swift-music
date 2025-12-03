@@ -1,12 +1,17 @@
-/// Represents a musical tempo
-///
-/// Tempo defines the speed of music in beats per minute (BPM).
+/**
+ Represents a musical tempo
+
+ Tempo defines the speed of music in beats per minute (BPM).
+ */
 public struct Tempo: Sendable {
     /// Beats per minute
     public let bpm: Double
 
-    /// Creates a tempo with a specific BPM
-    /// - Parameter bpm: Beats per minute
+    /**
+     Creates a tempo with a specific BPM
+
+     - Parameter bpm: Beats per minute
+     */
     public init(bpm: Double) {
         self.bpm = bpm
     }
@@ -16,16 +21,22 @@ public struct Tempo: Sendable {
         60.0 / bpm
     }
 
-    /// Calculates the duration of a note in seconds
-    /// - Parameter duration: The note duration
-    /// - Returns: The duration in seconds
+    /**
+     Calculates the duration of a note in seconds
+
+     - Parameter duration: The note duration
+     - Returns: The duration in seconds
+     */
     public func duration(of duration: NoteDuration) -> Double {
         beatDuration * duration.relativeDuration * 4.0 // assuming quarter note = 1 beat
     }
 
-    /// Calculates the duration of a custom relative duration in seconds
-    /// - Parameter relativeDuration: The relative duration (e.g., 1.5 for dotted quarter)
-    /// - Returns: The duration in seconds
+    /**
+     Calculates the duration of a custom relative duration in seconds
+
+     - Parameter relativeDuration: The relative duration (e.g., 1.5 for dotted quarter)
+     - Returns: The duration in seconds
+     */
     public func duration(relativeDuration: Double) -> Double {
         beatDuration * relativeDuration * 4.0
     }

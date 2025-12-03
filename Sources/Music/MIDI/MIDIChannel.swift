@@ -1,13 +1,18 @@
-/// Represents a MIDI channel (0-15, displayed as 1-16)
-///
-/// MIDI supports 16 independent channels for different instruments or parts.
+/**
+ Represents a MIDI channel (0-15, displayed as 1-16)
+
+ MIDI supports 16 independent channels for different instruments or parts.
+ */
 public struct MIDIChannel: Sendable {
     /// The channel number (0-15)
     public let value: UInt8
 
-    /// Creates a MIDI channel
-    /// - Parameter value: The channel number (0-15)
-    /// - Throws: MusicError.invalidMIDI if the value is out of range
+    /**
+     Creates a MIDI channel
+
+     - Parameter value: The channel number (0-15)
+     - Throws: MusicError.invalidMIDI if the value is out of range
+     */
     public init(_ value: UInt8) throws {
         guard value < 16 else {
             throw MusicError.invalidMIDI("MIDI channel must be 0-15, got \(value)")
@@ -15,9 +20,12 @@ public struct MIDIChannel: Sendable {
         self.value = value
     }
 
-    /// Creates a MIDI channel from a display number (1-16)
-    /// - Parameter displayNumber: The display number (1-16)
-    /// - Throws: MusicError.invalidMIDI if the value is out of range
+    /**
+     Creates a MIDI channel from a display number (1-16)
+
+     - Parameter displayNumber: The display number (1-16)
+     - Throws: MusicError.invalidMIDI if the value is out of range
+     */
     public init(displayNumber: Int) throws {
         guard (1...16).contains(displayNumber) else {
             throw MusicError.invalidMIDI("MIDI channel display number must be 1-16, got \(displayNumber)")
@@ -25,8 +33,11 @@ public struct MIDIChannel: Sendable {
         self.value = UInt8(displayNumber - 1)
     }
 
-    /// Creates a MIDI channel, returning nil if out of range
-    /// - Parameter value: The channel number (0-15)
+    /**
+     Creates a MIDI channel, returning nil if out of range
+
+     - Parameter value: The channel number (0-15)
+     */
     public init?(unchecked value: UInt8) {
         guard value < 16 else {
             return nil

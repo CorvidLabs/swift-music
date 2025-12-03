@@ -1,6 +1,8 @@
-/// Represents chord extensions and alterations
-///
-/// Extensions add color tones beyond the basic chord quality.
+/**
+ Represents chord extensions and alterations
+
+ Extensions add color tones beyond the basic chord quality.
+ */
 public struct ChordExtension: OptionSet, Sendable {
     public let rawValue: Int
 

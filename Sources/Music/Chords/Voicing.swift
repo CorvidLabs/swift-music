@@ -1,22 +1,30 @@
-/// Represents a specific voicing of a chord
-///
-/// A voicing defines the exact arrangement and spacing of notes
-/// in a chord across different octaves.
+/**
+ Represents a specific voicing of a chord
+
+ A voicing defines the exact arrangement and spacing of notes
+ in a chord across different octaves.
+ */
 public struct Voicing: Sendable {
     /// The notes in this voicing, ordered from lowest to highest
     public let notes: [Note]
 
-    /// Creates a voicing with specific notes
-    /// - Parameter notes: The notes in the voicing
+    /**
+     Creates a voicing with specific notes
+
+     - Parameter notes: The notes in the voicing
+     */
     public init(notes: [Note]) {
         self.notes = notes.sorted()
     }
 
-    /// Creates a voicing from a chord and starting note
-    /// - Parameters:
-    ///   - chord: The chord to voice
-    ///   - startNote: The lowest note in the voicing
-    /// - Returns: A close voicing starting from the given note
+    /**
+     Creates a voicing from a chord and starting note
+
+     - Parameters:
+       - chord: The chord to voice
+       - startNote: The lowest note in the voicing
+     - Returns: A close voicing starting from the given note
+     */
     public static func close(chord: Chord, startNote: Note) -> Voicing {
         let chordNotes = chord.notes(octave: startNote.octave)
         let adjustedNotes = chordNotes.map { note in
@@ -28,14 +36,16 @@ public struct Voicing: Sendable {
         return Voicing(notes: adjustedNotes)
     }
 
-    /// Creates a drop-2 voicing from a chord
-    ///
-    /// Drop-2 voicing takes the second-highest note and drops it an octave.
-    ///
-    /// - Parameters:
-    ///   - chord: The chord to voice
-    ///   - octave: The base octave
-    /// - Returns: A drop-2 voicing
+    /**
+     Creates a drop-2 voicing from a chord
+
+     Drop-2 voicing takes the second-highest note and drops it an octave.
+
+     - Parameters:
+       - chord: The chord to voice
+       - octave: The base octave
+     - Returns: A drop-2 voicing
+     */
     public static func drop2(chord: Chord, octave: Int) -> Voicing {
         var notes = chord.notes(octave: octave).sorted()
 
@@ -50,14 +60,16 @@ public struct Voicing: Sendable {
         return Voicing(notes: notes.sorted())
     }
 
-    /// Creates a drop-3 voicing from a chord
-    ///
-    /// Drop-3 voicing takes the third-highest note and drops it an octave.
-    ///
-    /// - Parameters:
-    ///   - chord: The chord to voice
-    ///   - octave: The base octave
-    /// - Returns: A drop-3 voicing
+    /**
+     Creates a drop-3 voicing from a chord
+
+     Drop-3 voicing takes the third-highest note and drops it an octave.
+
+     - Parameters:
+       - chord: The chord to voice
+       - octave: The base octave
+     - Returns: A drop-3 voicing
+     */
     public static func drop3(chord: Chord, octave: Int) -> Voicing {
         var notes = chord.notes(octave: octave).sorted()
 
@@ -72,14 +84,16 @@ public struct Voicing: Sendable {
         return Voicing(notes: notes.sorted())
     }
 
-    /// Creates a drop-2-4 voicing from a chord
-    ///
-    /// Drop-2-4 voicing drops both the second and fourth notes from the top.
-    ///
-    /// - Parameters:
-    ///   - chord: The chord to voice
-    ///   - octave: The base octave
-    /// - Returns: A drop-2-4 voicing
+    /**
+     Creates a drop-2-4 voicing from a chord
+
+     Drop-2-4 voicing drops both the second and fourth notes from the top.
+
+     - Parameters:
+       - chord: The chord to voice
+       - octave: The base octave
+     - Returns: A drop-2-4 voicing
+     */
     public static func drop24(chord: Chord, octave: Int) -> Voicing {
         var notes = chord.notes(octave: octave).sorted()
 

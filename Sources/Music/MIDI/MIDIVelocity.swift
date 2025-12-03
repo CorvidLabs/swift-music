@@ -1,13 +1,18 @@
-/// Represents MIDI velocity (0-127)
-///
-/// Velocity controls the volume/intensity of a MIDI note.
+/**
+ Represents MIDI velocity (0-127)
+
+ Velocity controls the volume/intensity of a MIDI note.
+ */
 public struct MIDIVelocity: Sendable {
     /// The velocity value (0-127)
     public let value: UInt8
 
-    /// Creates a MIDI velocity
-    /// - Parameter value: The velocity value (0-127)
-    /// - Throws: MusicError.invalidMIDI if the value is out of range
+    /**
+     Creates a MIDI velocity
+
+     - Parameter value: The velocity value (0-127)
+     - Throws: MusicError.invalidMIDI if the value is out of range
+     */
     public init(_ value: UInt8) throws {
         guard value <= 127 else {
             throw MusicError.invalidMIDI("MIDI velocity must be 0-127, got \(value)")
@@ -15,14 +20,20 @@ public struct MIDIVelocity: Sendable {
         self.value = value
     }
 
-    /// Creates a MIDI velocity from an integer (clamped to 0-127)
-    /// - Parameter value: The velocity value
+    /**
+     Creates a MIDI velocity from an integer (clamped to 0-127)
+
+     - Parameter value: The velocity value
+     */
     public init(clamped value: Int) {
         self.value = UInt8(max(0, min(127, value)))
     }
 
-    /// Creates a MIDI velocity, returning nil if out of range
-    /// - Parameter value: The velocity value
+    /**
+     Creates a MIDI velocity, returning nil if out of range
+
+     - Parameter value: The velocity value
+     */
     public init?(unchecked value: UInt8) {
         guard value <= 127 else {
             return nil

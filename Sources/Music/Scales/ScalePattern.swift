@@ -1,7 +1,9 @@
-/// Represents a scale pattern as a sequence of intervals
-///
-/// A scale pattern defines the structure of a scale independent
-/// of its root note.
+/**
+ Represents a scale pattern as a sequence of intervals
+
+ A scale pattern defines the structure of a scale independent
+ of its root note.
+ */
 public struct ScalePattern: Sendable {
     /// The intervals that make up this scale pattern (in semitones from root)
     public let intervals: [Int]
@@ -9,10 +11,13 @@ public struct ScalePattern: Sendable {
     /// The name of the scale pattern
     public let name: String
 
-    /// Creates a scale pattern with intervals and a name
-    /// - Parameters:
-    ///   - intervals: Array of semitone intervals from the root
-    ///   - name: The name of the scale pattern
+    /**
+     Creates a scale pattern with intervals and a name
+
+     - Parameters:
+       - intervals: Array of semitone intervals from the root
+       - name: The name of the scale pattern
+     */
     public init(intervals: [Int], name: String) {
         self.intervals = intervals
         self.name = name

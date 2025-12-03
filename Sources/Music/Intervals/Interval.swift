@@ -1,7 +1,9 @@
-/// Represents a musical interval
-///
-/// An interval is the distance between two pitches, defined by
-/// its numeric distance and quality.
+/**
+ Represents a musical interval
+
+ An interval is the distance between two pitches, defined by
+ its numeric distance and quality.
+ */
 public struct Interval: Sendable {
     /// The numeric distance (1 = unison, 2 = second, etc.)
     public let number: Int
@@ -12,20 +14,25 @@ public struct Interval: Sendable {
     /// The number of semitones in the interval
     public let semitones: Int
 
-    /// Creates an interval with a number, quality, and semitone count
-    /// - Parameters:
-    ///   - number: The interval number (1-based)
-    ///   - quality: The interval quality
-    ///   - semitones: The number of semitones
+    /**
+     Creates an interval with a number, quality, and semitone count
+
+     - Parameters:
+       - number: The interval number (1-based)
+       - quality: The interval quality
+       - semitones: The number of semitones
+     */
     public init(number: Int, quality: IntervalQuality, semitones: Int) {
         self.number = number
         self.quality = quality
         self.semitones = semitones
     }
 
-    /// Returns the inversion of this interval
-    ///
-    /// For example, a major third (M3) inverts to a minor sixth (m6)
+    /**
+     Returns the inversion of this interval
+
+     For example, a major third (M3) inverts to a minor sixth (m6)
+     */
     public var inverted: Interval {
         let invertedNumber = 9 - number
         let invertedSemitones = 12 - semitones

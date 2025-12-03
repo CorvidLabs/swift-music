@@ -1,7 +1,9 @@
-/// Represents a note name with its specific accidental
-///
-/// While `PitchClass` represents the twelve chromatic pitches,
-/// `NoteName` includes enharmonic spellings (e.g., C♯ vs D♭).
+/**
+ Represents a note name with its specific accidental
+
+ While `PitchClass` represents the twelve chromatic pitches,
+ `NoteName` includes enharmonic spellings (e.g., C♯ vs D♭).
+ */
 public enum NoteName: Sendable {
     case c
     case cSharp

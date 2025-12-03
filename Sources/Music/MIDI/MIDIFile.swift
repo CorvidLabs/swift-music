@@ -1,9 +1,11 @@
 import Foundation
 
-/// Represents a MIDI file
-///
-/// MIDI files store musical data in a standardized format that can be
-/// played back by any MIDI-compatible software or hardware.
+/**
+ Represents a MIDI file
+
+ MIDI files store musical data in a standardized format that can be
+ played back by any MIDI-compatible software or hardware.
+ */
 public struct MIDIFile: Sendable {
     /// MIDI file format type
     public enum Format: UInt16, Sendable {
@@ -26,11 +28,14 @@ public struct MIDIFile: Sendable {
     /// The tracks in the MIDI file
     public private(set) var tracks: [MIDITrack]
 
-    /// Creates a MIDI file
-    /// - Parameters:
-    ///   - format: The MIDI file format (default: .multiTrack)
-    ///   - ticksPerQuarterNote: The resolution in ticks per quarter note (default: 480)
-    ///   - tracks: The tracks in the file (default: empty)
+    /**
+     Creates a MIDI file
+
+     - Parameters:
+       - format: The MIDI file format (default: .multiTrack)
+       - ticksPerQuarterNote: The resolution in ticks per quarter note (default: 480)
+       - tracks: The tracks in the file (default: empty)
+     */
     public init(
         format: Format = .multiTrack,
         ticksPerQuarterNote: UInt16 = 480,
@@ -41,15 +46,21 @@ public struct MIDIFile: Sendable {
         self.tracks = tracks
     }
 
-    /// Adds a track to the file
-    /// - Parameter track: The track to add
+    /**
+     Adds a track to the file
+
+     - Parameter track: The track to add
+     */
     public mutating func addTrack(_ track: MIDITrack) {
         tracks.append(track)
     }
 
-    /// Encodes the MIDI file to binary data
-    /// - Returns: The MIDI file data
-    /// - Throws: MusicError if encoding fails
+    /**
+     Encodes the MIDI file to binary data
+
+     - Returns: The MIDI file data
+     - Throws: MusicError if encoding fails
+     */
     public func encode() throws -> Data {
         var data = Data()
 
@@ -71,10 +82,13 @@ public struct MIDIFile: Sendable {
         return data
     }
 
-    /// Decodes a MIDI file from binary data
-    /// - Parameter data: The MIDI file data
-    /// - Returns: The decoded MIDI file
-    /// - Throws: MusicError if decoding fails
+    /**
+     Decodes a MIDI file from binary data
+
+     - Parameter data: The MIDI file data
+     - Returns: The decoded MIDI file
+     - Throws: MusicError if decoding fails
+     */
     public static func decode(from data: Data) throws -> MIDIFile {
         var reader = DataReader(data: data)
 
