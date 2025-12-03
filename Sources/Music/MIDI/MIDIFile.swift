@@ -318,22 +318,20 @@ private struct DataReader {
 
 extension UInt16 {
     fileprivate var bigEndianBytes: [UInt8] {
-        let bigEndian = self.bigEndian
-        return [
-            UInt8((bigEndian >> 8) & 0xFF),
-            UInt8(bigEndian & 0xFF)
+        [
+            UInt8((self >> 8) & 0xFF),
+            UInt8(self & 0xFF)
         ]
     }
 }
 
 extension UInt32 {
     fileprivate var bigEndianBytes: [UInt8] {
-        let bigEndian = self.bigEndian
-        return [
-            UInt8((bigEndian >> 24) & 0xFF),
-            UInt8((bigEndian >> 16) & 0xFF),
-            UInt8((bigEndian >> 8) & 0xFF),
-            UInt8(bigEndian & 0xFF)
+        [
+            UInt8((self >> 24) & 0xFF),
+            UInt8((self >> 16) & 0xFF),
+            UInt8((self >> 8) & 0xFF),
+            UInt8(self & 0xFF)
         ]
     }
 }
