@@ -1,9 +1,8 @@
 # swift-music
 
-[![CI](https://github.com/0xLeif/swift-music/actions/workflows/ci.yml/badge.svg)](https://github.com/0xLeif/swift-music/actions/workflows/ci.yml)
-[![Documentation](https://github.com/0xLeif/swift-music/actions/workflows/docs.yml/badge.svg)](https://github.com/0xLeif/swift-music/actions/workflows/docs.yml)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2F0xLeif%2Fswift-music%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/0xLeif/swift-music)
-[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2F0xLeif%2Fswift-music%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/0xLeif/swift-music)
+[![CI](https://img.shields.io/github/actions/workflow/status/CorvidLabs/swift-music/ci.yml?label=CI&branch=main)](https://github.com/CorvidLabs/swift-music/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/releases)
 
 A comprehensive Swift package for music theory, providing elegant, protocol-oriented abstractions for working with musical concepts including notes, scales, chords, progressions, rhythm, and MIDI.
 
