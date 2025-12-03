@@ -18,10 +18,10 @@ A comprehensive Swift package for music theory, providing elegant, protocol-orie
 
 ## Supported Platforms
 
-- iOS 15.0+
-- macOS 11.0+
-- tvOS 15.0+
-- watchOS 8.0+
+- iOS 16.0+
+- macOS 13.0+
+- tvOS 16.0+
+- watchOS 9.0+
 - visionOS 1.0+
 
 ## Installation
