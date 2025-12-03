@@ -1,6 +1,7 @@
 # swift-music
 
-[![CI](https://img.shields.io/github/actions/workflow/status/CorvidLabs/swift-music/ci.yml?label=CI&branch=main)](https://github.com/CorvidLabs/swift-music/actions/workflows/ci.yml)
+[![macOS](https://img.shields.io/github/actions/workflow/status/CorvidLabs/swift-music/macOS.yml?label=macOS&branch=main)](https://github.com/CorvidLabs/swift-music/actions/workflows/macOS.yml)
+[![Ubuntu](https://img.shields.io/github/actions/workflow/status/CorvidLabs/swift-music/ubuntu.yml?label=Ubuntu&branch=main)](https://github.com/CorvidLabs/swift-music/actions/workflows/ubuntu.yml)
 [![License](https://img.shields.io/github/license/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/blob/main/LICENSE)
 [![Version](https://img.shields.io/github/v/release/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/releases)
 

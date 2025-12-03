@@ -1,0 +1,16 @@
+name: ubuntu
+
+on:
+  push:
+    branches: ["**"]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    container: swift:6.0
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
