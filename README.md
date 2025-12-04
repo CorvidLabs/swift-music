@@ -5,6 +5,8 @@
 [![License](https://img.shields.io/github/license/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/blob/main/LICENSE)
 [![Version](https://img.shields.io/github/v/release/CorvidLabs/swift-music)](https://github.com/CorvidLabs/swift-music/releases)
 
+> **Pre-1.0 Notice**: This library is under active development. The API may change between minor versions until 1.0.
+
 A comprehensive Swift package for music theory, providing elegant, protocol-oriented abstractions for working with musical concepts including notes, scales, chords, progressions, rhythm, and MIDI.
 
 ## Features
