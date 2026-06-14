@@ -2,14 +2,33 @@ name: ubuntu
 
 on:
   push:
-    branches: ["**"]
+    branches: [main]
+    paths:
+      - Sources/**
+      - Tests/**
+      - Package.swift
+      - Package.resolved
+      - .github/workflows/ubuntu.yml
+  pull_request:
+    branches: [main]
+    paths:
+      - Sources/**
+      - Tests/**
+      - Package.swift
+      - Package.resolved
+      - .github/workflows/ubuntu.yml
+
+concurrency:
+  group: ubuntu-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
     container: swift:6.0
+    timeout-minutes: 20
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v5
     - name: Build
       run: swift build -v
     - name: Run tests
