@@ -34,13 +34,13 @@ Add the following to your `Package.swift` file:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/0xLeif/swift-music.git", from: "0.1.0")
+    .package(url: "https://github.com/CorvidLabs/swift-music.git", from: "0.1.0")
 ]
 ```
 
 Or in Xcode:
 1. File → Add Package Dependencies...
-2. Enter package URL: `https://github.com/0xLeif/swift-music.git`
+2. Enter package URL: `https://github.com/CorvidLabs/swift-music.git`
 3. Select version and add to your target
 
 ## Usage
@@ -308,7 +308,7 @@ Contributions are welcome! Please ensure all code:
 
 ## Documentation
 
-Full API documentation is available at [https://0xleif.github.io/swift-music/documentation/music/](https://0xleif.github.io/swift-music/documentation/music/)
+Full API documentation is available at [https://corvidlabs.github.io/swift-music/documentation/music/](https://corvidlabs.github.io/swift-music/documentation/music/)
 
 ## License
 
