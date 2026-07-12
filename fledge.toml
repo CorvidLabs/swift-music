@@ -1,0 +1,7 @@
+[tasks]
+build = "swift build -v"
+test = "swift test -v"
+
+[lanes.verify]
+description = "Build and test the Swift Music library"
+steps = ["build", "test"]
