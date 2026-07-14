@@ -5,8 +5,9 @@ artifact: tasks
 
 # Tasks
 
-- [x] Adopt SpecSync 5.0.1 at advisory threshold 0.
+- [x] Inventory and audit all 25 source files and 110 tests.
+- [x] Draft nine stable requirements and the complete brownfield API/spec structure.
 - [x] Install Claude, Cursor, Codex, and Gemini integrations.
-- [x] Add Fledge, Trust, Augur, and Attest policy.
-- [x] Preserve macOS, Ubuntu, public API, and DocC boundaries.
-- [ ] Obtain owner definition and closing approvals.
+- [x] Configure Fledge, Trust, Augur, Attest, and exact repository SDD paths.
+- [x] Preserve product sources, tests, package boundaries, runners, and independent DocC deployment.
+- [x] Widen native macOS/Linux path filters to cover governance/specification changes.

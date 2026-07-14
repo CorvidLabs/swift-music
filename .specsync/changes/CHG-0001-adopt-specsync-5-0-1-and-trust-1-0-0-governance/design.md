@@ -5,4 +5,4 @@ artifact: design
 
 # Design
 
-Preserve both platform workflows and DocC Pages unchanged. Add a macOS Trust job whose native Fledge lane builds and tests the Music library. Use standard Trust with blocking risk, soft provenance, advisory threshold 0, and managed Atlas disabled.
+Add one active canonical spec covering all 25 source files and map nine stable requirements to the five existing test suites and native compilation evidence. Use standard Trust with blocking risk, progressive provenance, 100% contract coverage, and Trust-managed Atlas disabled. Preserve the existing macOS and Swift 6.0 Linux jobs and widen only their path filters so governance changes receive native coverage; retain CodeQL and push-only DocC Pages independently.
