@@ -1,0 +1,68 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008046,
+      "digest": "474aee36ac1250c65ccb92695b2da6ee78dca897d0f057364861788e9577a3cc",
+      "note": "Definition approved after complete 25-file source audit and review of all 110 tests in five suites with native build and test verification green."
+    },
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008350,
+      "digest": "474aee36ac1250c65ccb92695b2da6ee78dca897d0f057364861788e9577a3cc",
+      "note": "Definition refreshed after exact 292-export parser coverage across all 25 files and 3,349 LOC with no generated placeholders."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008361,
+      "digest": "b642b4bd02f041b2733f7c2655cafc4c38dd0f04affbf9e6a6f63f96d9840d91",
+      "note": "Closing approval after exact 292-export coverage and successful native build plus all 110 tests."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008725,
+      "digest": "2b5185b0b09a4b83d3dd190d6edabcb437d8a524a85cb78a96a991ed1109619c",
+      "note": "Fresh closing approval after the supported evidence-only reopen, corrected 26-test Chords evidence, strict 100% contract, and all 110 native tests passed."
+    }
+  ],
+  "reopenings": [
+    {
+      "schema_version": 1,
+      "change_id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+      "actor": "user:0xLeif",
+      "reason": "A later accepted evidence-only correction fixed the audited Chords suite count from 27 to 26 while preserving the 110-test total and all product/spec semantics.",
+      "timestamp": 1784008720,
+      "from_state": "accepted",
+      "to_state": "verifying",
+      "superseded_approval": {
+        "gate": "acceptance",
+        "actor": "user:0xLeif",
+        "timestamp": 1784008361,
+        "digest": "b642b4bd02f041b2733f7c2655cafc4c38dd0f04affbf9e6a6f63f96d9840d91",
+        "note": "Closing approval after exact 292-export coverage and successful native build plus all 110 tests."
+      },
+      "prior_verification": {
+        "timestamp": 1784008352,
+        "commit": "f4a20500b7b78468f03a494c80ded5097e2e3e5b",
+        "contract_digest": "474aee36ac1250c65ccb92695b2da6ee78dca897d0f057364861788e9577a3cc",
+        "workspace_digest": "47dce6d77d57e1a5c3aae9aa6099b380545fbab222908601e487d6b68d410537",
+        "acceptance_input_digest": "4e16c8dafa5495311040ce2f902fc500153fb9b4826edbc70969119f3913e67c",
+        "passed": true,
+        "commands": [
+          {
+            "command": "fledge lanes run verify",
+            "success": true,
+            "exit_code": 0
+          }
+        ],
+        "requirement_ids": []
+      },
+      "stale_acceptance_input_digest": "4e16c8dafa5495311040ce2f902fc500153fb9b4826edbc70969119f3913e67c",
+      "current_acceptance_input_digest": "e919ca50df735cda6528d442c6a55cd53f2669d82d5d1eb822e25e8c046ab20f"
+    }
+  ]
+}

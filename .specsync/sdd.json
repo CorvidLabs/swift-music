@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "enabled": true,
+  "require_change_for_meaningful_files": true,
+  "meaningful_paths": [
+    "Sources/",
+    "Tests/",
+    ".github/",
+    "Package.swift",
+    "Package.resolved",
+    "fledge.toml",
+    ".trust.toml",
+    ".augur.toml",
+    ".attest.json",
+    "AGENTS.md",
+    ".specsync/",
+    "specs/"
+  ],
+  "ignored_paths": [],
+  "verification_commands": [
+    "fledge lanes run verify"
+  ],
+  "custom_artifacts": {},
+  "principles_file": null
+}

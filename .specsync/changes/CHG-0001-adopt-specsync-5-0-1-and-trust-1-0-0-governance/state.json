@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "id": "CHG-0001-adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "slug": "adopt-specsync-5-0-1-and-trust-1-0-0-governance",
+  "title": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "description": "Adopt SpecSync 5.0.1 and Trust 1.0.0 governance",
+  "kind": "migration",
+  "state": "accepted",
+  "canonical_applied": true,
+  "base_commit": "d3b1d3bdeb6f2112c911a942a84067744682ea1b",
+  "created_at": 1783885956,
+  "updated_at": 1784008725,
+  "affected_specs": [],
+  "affected_paths": [
+    "Sources/",
+    "Tests/",
+    "specs/",
+    ".github/",
+    ".specsync/",
+    ".trust.toml",
+    ".augur.toml",
+    ".attest.json",
+    "fledge.toml",
+    "AGENTS.md",
+    "Package.swift",
+    "Package.resolved"
+  ],
+  "no_spec_change": true,
+  "no_spec_change_rationale": "This migration adds governance and an active canonical description of existing behavior; it does not change the Music library's behavior or public API.",
+  "acceptance_criteria": [
+    "SpecSync 5.0.1 documents every parsed export and all 25 source files/3,349 LOC at 100%; all four agents report installed; native build and all 110 tests pass; Trust passes; macOS, Ubuntu, CodeQL, DocC, release, and public API boundaries remain preserved."
+  ],
+  "selected_artifacts": [
+    "context",
+    "research",
+    "design",
+    "plan",
+    "tasks",
+    "testing",
+    "docs"
+  ],
+  "dependencies": [],
+  "answers": {
+    "architecture_risk": "yes",
+    "public_contract": "no"
+  }
+}

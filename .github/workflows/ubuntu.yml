@@ -8,7 +8,14 @@ on:
       - Tests/**
       - Package.swift
       - Package.resolved
-      - .github/workflows/ubuntu.yml
+      - .github/**
+      - .specsync/**
+      - specs/**
+      - fledge.toml
+      - .trust.toml
+      - .augur.toml
+      - .attest.json
+      - AGENTS.md
   pull_request:
     branches: [main]
     paths:
@@ -16,7 +23,14 @@ on:
       - Tests/**
       - Package.swift
       - Package.resolved
-      - .github/workflows/ubuntu.yml
+      - .github/**
+      - .specsync/**
+      - specs/**
+      - fledge.toml
+      - .trust.toml
+      - .augur.toml
+      - .attest.json
+      - AGENTS.md
 
 concurrency:
   group: ubuntu-${{ github.ref }}

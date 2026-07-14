@@ -1,0 +1,18 @@
+{
+  "approvals": [
+    {
+      "gate": "definition",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008570,
+      "digest": "68f7b1b4c7ff4929650c23ce06df2d294dd61c19a750c603d9be5fec52774d89",
+      "note": "Definition approved after file-by-file confirmation of 26 Chords tests and 110 total tests, with native verification already green."
+    },
+    {
+      "gate": "acceptance",
+      "actor": "user:0xLeif",
+      "timestamp": 1784008582,
+      "digest": "43dbd4423a8c435a9def563a09180c4f9308a84548ca057346825701a25213e3",
+      "note": "Closing approval after the corrected 26-test Chords evidence, strict 100% coverage, and all 110 native tests passed."
+    }
+  ]
+}
